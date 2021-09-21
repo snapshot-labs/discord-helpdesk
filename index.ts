@@ -11,22 +11,6 @@ const sessionId = uuid.v4();
 
 const {auth} = require('google-auth-library');
 
-// load the environment variable with our keys
-const keysEnvVar = process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON;
-if(keysEnvVar) {
-  const keys = JSON.parse(keysEnvVar);
-  
-  async function main() {
-    // load the JWT or UserRefreshClient from the keys
-    const client = auth.fromJSON(keys);
-    client.scopes = ['https://www.googleapis.com/auth/cloud-platform'];
-    const url = `https://dns.googleapis.com/dns/v1/projects/${keys.project_id}`;
-    const res = await client.request({url});
-    console.log(res.data);
-  }
-  main().catch(console.error);
-}
-
 // Create a new session
 const sessionClient = new dialogflow.SessionsClient();
 const sessionPath = sessionClient.sessionPath(process.env.PROJECT_ID, sessionId);
