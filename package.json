@@ -1,0 +1,26 @@
+{
+  "name": "discord-helpdesk",
+  "version": "1.0.0",
+  "description": "Discord bot for snapshot helpdesk",
+  "main": "index.ts",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "author": "@snapshot-labs",
+  "license": "MIT",
+  "dependencies": {
+    "@discordjs/rest": "0.1.0-canary.0",
+    "dialogflow": "1.2.0",
+    "discord-api-types": "^0.23.1",
+    "discord.js": "^13.1.0",
+    "dotenv": "^10.0.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "engines": {
+    "node": "16.6.x"
+  }
+}
